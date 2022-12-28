@@ -27,19 +27,30 @@ public class FromPage_Reusable_Components
 	@AndroidFindBy(id="com.androidsample.generalstore:id/nameField")
 	private WebElement nameField;
 	
-	//2nd element
-	@AndroidFindBy(xpath="//android.widget.RadioButton[@text='Female']")
-	private WebElement Female_Option;
-	// driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
-	
-	
-	//now we are using send key & click operation on above ids
-	
-	public void Set_Name_Field_opration()
+	public void Set_Name_Field_opration(String name)
 	{
-		nameField.sendKeys("Mohit");
-		Female_Option.click();
+		nameField.sendKeys(name);
+	
 		
 	}
-	
-}
+	//2nd element
+		@AndroidFindBy(xpath="//android.widget.RadioButton[@text='Female']")
+		private WebElement Female_Option;
+		
+		@AndroidFindBy(xpath="//android.widget.RadioButton[@text='Male']")
+		private WebElement Male_Option;
+		
+		
+	public void Set_Gender(String gender)
+	{
+		if(gender.contains("Female"))
+		{
+		Female_Option.click();
+		}
+		else 
+		{
+		Male_Option.click();
+		}		
+		}
+		
+	}
