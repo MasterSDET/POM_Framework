@@ -34,17 +34,20 @@ public class Ecom_Tc01_Cart extends Base_POM_File
 			FromPage_Reusable_Components FromPage = new FromPage_Reusable_Components(driver);
 			FromPage.Set_Name_Field_opration("Mohit");
 			FromPage.Set_Gender("Female");
+			FromPage.Set_Text("EnterText");
 	
 		
 			
-		//	driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Mohit");
+	//Done	POM//	driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Mohit");
 			
-		//	driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+	//Done POM	//	driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+			
 			driver.findElement(By.id("android:id/text1")).click();
 			driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"));"));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Argentina']")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();	
+/*/   /*/       /*/     /*/          /*/     /*/ 
 			Thread.sleep(2000);
 			driver.findElements(By.xpath("//android.widget.TextView[@text='ADD TO CART']")).get(0).click();	
 			Thread.sleep(2000);

@@ -52,5 +52,16 @@ public class FromPage_Reusable_Components
 		Male_Option.click();
 		}		
 		}
+	//3rd element
+	
+	@AndroidFindBy(id="android:id/text1")
+	private WebElement Entertext;
+	
+	public void Set_Text(String Entertext)
+	{
+		nameField.sendKeys(Entertext);
+	
+		
+	}
 		
 	}
