@@ -19,12 +19,13 @@
 
 	import com.google.common.collect.ImmutableMap;
 
-	import io.appium.java_client.android.options.UiAutomator2Options;
+import Utility.Android_Action;
+import io.appium.java_client.android.options.UiAutomator2Options;
 	    
 	import io.appium.java_client.service.local.AppiumServiceBuilder;
 	 
 	    
-	public class Base_POM_File 
+	public class Base_POM_File extends Android_Action
 	{
 	
 	public static AndroidDriver driver;
@@ -48,72 +49,7 @@
 		 driver =  new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub/"), options);
 
 
-	}
-
-	public static void swipeaction(WebElement eles, String direction)
-	{
-		
-	((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-			    
-				"elementId", ((RemoteWebElement)eles).getId(),
-			    "direction", "left",			    
-			    "percent", 0.75
-			));
-	}
-	public static void Dragactivites(WebElement Dra, String direction)
-	{
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) Dra).getId(),
-			    "endX", 619,
-			    "endY", 560
-			));
-	}
-	/*public static <WebDriverWait> void wait_Condition(WebElement put_wait, String direction)
-	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	 //   wait.until(ExpectedConditions.visibilityOf(wait(10)));
-	}
-	*/
-	public static void longPressAction(WebElement LongPress)
-	{
-		((JavascriptExecutor)driver).executeScript("mobile: longClickGesture",
-				ImmutableMap.of("elementId",((RemoteWebElement) LongPress).getId(),
-						"duration",2000));
-	}
-
-	public static void scrollToEndAction()
-	{
-		boolean canScrollMore;
-		do
-		{
-		 canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-			    
-			));
-		}while(canScrollMore);
-	}
-
-
-	public static void swipeAction(WebElement ele,String direction)
-	{
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-				"elementId", ((RemoteWebElement)ele).getId(),
-			 
-			    "direction", direction,
-			    "percent", 0.75
-			));
-		
-		
-	}
-
-
-	public static Double getFormattedAmount(String amount)
-	{
-		Double price = Double.parseDouble(amount.substring(1));
-		return price;
-		
-	}
-
-		
+	}		
 	}
 
 	    
